@@ -1,8 +1,8 @@
 main {
   display: grid;
   grid-template-columns: 250px 250px;
-  grid-template-rows: 450px;
-  grid-gap: 10px;
+  grid-template-rows: Repeat(3, 380px);
+  grid-gap: 40px 10px;
   margin-top: 44px;
   grid-auto-rows: 500px;
   justify-items: center;
@@ -20,6 +20,11 @@ main {
   width: 100%
 }
 
+.incrementer {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .navbar a {
   float: left;
   display: block;
@@ -33,6 +38,10 @@ main {
 .navbar a:hover {
   background: #ddd;
   color: black;
+}
+
+.navbar .cart {
+  float: right;
 }
 
 .name {
@@ -65,7 +74,7 @@ img {
 
 .Item {
   width: 200px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.6);
 }
 
 .price {
@@ -90,9 +99,4 @@ img {
   color: #4a4a4a;
   padding: 10px 0px 10px 10px;
   border-top: 1px solid #4a4a4a;
-}
-
-.page {
-  min-width: 500px;
-  margin: auto;
 }

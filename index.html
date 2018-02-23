@@ -2,17 +2,21 @@
 <html>
 
    <head>
+     <meta charset="UTF-8">
       <title>Pretty in Pink</title>
       <link rel="stylesheet" type="text/css" href="index.css" />
       <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="index.js"></script>
    </head>
 
    <body>
      <div class="navbar">
       <a href="#home">Home</a>
       <a href="#cart">Shopping Cart</a>
+      <a href="#total" class = "cart">Total: $ <span id="sum"></sum></a>
     </div>
       <div class = "page">
       <h1 class = "name">Pretty in Pink</h1>
@@ -22,22 +26,130 @@
           <img src="https://images-na.ssl-images-amazon.com/images/I/61DccsAoVJL._UX395_.jpg" class="merch" />
           <p class="price">$186.54</p>
           <p class="description">
-            Kate Spade Grove Street Carli Leather Crossbody Bag Purse Satchel Shoulder Bag</p>
+            Kate Spade Grove Street Carli Leather Crossbody Satchel</p>
+          <p>
+            <div class = "incrementer">
+            <input type = "number" style = "width: 30px" id = "ks-purse" value = 0 min = 0>
+            <button onclick="addToCart('Kate Spade Purse', 186.54, document.getElementById('ks-purse').value)">Add To Cart</button>
+          </div>
+          </p>
       </div>
        <div class = "Item b">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04qsm63B-3FXJyG2vNfkzXdoWB_SgQ_V_5K5BCGxz8P5Z0pIz" class="merch" />
           <p class="price">$9.50</p>
           <p class="description">
             OPI "Sweetheart" Nail Polish, 0.5 fl. oz.</p>
+            <p>
+              <div class = "incrementer">
+              <input type = "number" style = "width: 30px" id = "opi" value = 0 min = 0>
+              <button onclick="addToCart('OPI Nail Polish', 9.50, document.getElementById('opi').value)">Add To Cart</button>
+            </div>
+            </p>
       </div>
        <div class = "Item c">
           <img src="https://www.alexandani.com/media/catalog/product/cache/1/image/1200x/9df78eab33525d08d6e5fb8d27136e95/g/o/gold_pawprint_1.png" class="merch" />
           <p class="price">$34.00</p>
           <p class="description">
             Alex and Ani Prints of Love Charm Bangle</p>
+            <p>
+              <div class = "incrementer">
+              <input type = "number" style = "width: 30px" id = "bangle" value = 0 min = 0>
+              <button onclick="addToCart('Alex and Ani Bangle', 34.00, document.getElementById('bangle).value)">Add To Cart</button>
+            </div>
+            </p>
       </div>
+      <div class = "Item d">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLzKKPOrcTLgpFAaqGpMWKgMwbNuVG8oGeLmP1DH8TIDjR6xYh" class="merch" />
+         <p class="price">$25.00</p>
+         <p class="description">
+           S'well Stainless Steel Bottle Sangria 9 oz.</p>
+           <p>
+             <div class = "incrementer">
+             <input type = "number" style = "width: 30px" id = "swell" value = 0 min = 0>
+             <button onclick="addToCart('S'well Bottle', 25.00, document.getElementById('swell').value)">Add To Cart</button>
+           </div>
+           </p>
+     </div>
+     <div class = "Item e">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsBORRm1ntOxTs8J9lNY9vSM9_ehFgeO8JThULHu1sNnBjzVGs" class="merch" />
+        <p class="price">$78.00</p>
+        <p class="description">
+          Lululemon Garnet Namastay Mat</p>
+          <p>
+            <div class = "incrementer">
+            <input type = "number" style = "width: 30px" id = "yoga" value = 0 min = 0>
+            <button onclick="addToCart('Lululemon Yoga Mat', 78.00, document.getElementById('yoga').value)">Add To Cart</button>
+          </div>
+          </p>
+    </div>
+    <div class = "Item f">
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoXHgu4Cz5H3EhPyQkTlgUPqflSA9tPxFPciyOBlyOzlcQG2lYDQ" class="merch" />
+       <p class="price">$15.00</p>
+       <p class="description">
+         "But First, Coffee" Mug</p>
+         <p>
+           <div class = "incrementer">
+           <input type = "number" style = "width: 30px" id = "mug" value = 0 min = 0>
+           <button onclick="addToCart('Coffee Mug', 15.00, document.getElementById('mug').value)">Add To Cart</button>
+         </div>
+         </p>
+   </div>
+   <div class = "Item g">
+      <img src="https://n.nordstrommedia.com/ImageGallery/store/product/Zoom/1/_101145981.jpg?crop=pad&pad_color=FFF&format=jpeg&w=391&h=600&quality=70" class="merch" />
+      <p class="price">$30.00</p>
+      <p class="description">
+        Kate Spade 17 Month Planner</p>
+        <p>
+          <div class = "incrementer">
+          <input type = "number" style = "width: 30px" id = "planner" value = 0 min = 0>
+          <button onclick="addToCart('Kate Spade Planner', 30.00, document.getElementById('planner').value)">Add To Cart</button>
+        </div>
+        </p>
+  </div>
+  <div class = "Item h">
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpxQ494bRxtigFJQntRgy5NGRdWT_5vsn8Fe4-1YDdrv05P8VyRg" class="merch" />
+     <p class="price">$54.00</p>
+     <p class="description">
+       Urban Decay Naked 3 Palette</p>
+       <p>
+         <div class = "incrementer">
+         <input type = "number" style = "width: 30px" id = "palette" value = 0 min = 0>
+         <button onclick="addToCart('Urban Decay Naked Palette', 54.00, document.getElementById('palette').value)">Add To Cart</button>
+       </div>
+       </p>
+ </div>
+ <div class = "Item h">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6ylR5AHuzD2ucTDTEG5D9IS9woMBDOCWtttuHkARHJkBntOcf" class="merch" />
+    <p class="price">$77.70</p>
+    <p class="description">
+      Micahel Kors Sutton Leather Continental Wallet</p>
+      <p>
+        <div class = "incrementer">
+        <input type = "number" style = "width: 30px" id = "wallet" value = 0 min = 0>
+        <button onclick="addToCart('Michael Kors Wallet', 77.70, document.getElementById('wallet').value)">Add To Cart</button>
+      </div>
+      </p>
+</div>
    </main>
       </div>
+  <script>
+  var numItems = {};
+  var total = 0.0;
+  var totalItems = 0
+  document.getElementById("sum").innerHTML = total;
+  function addToCart(name, price, value) {
+    total += parseFloat(price)*value;
+    console.log("total price: ", total);
+    document.getElementById("sum").innerHTML = total.toFixed(2);
+    if (!(name in numItems)) {
+      numItems[name] = 0
+    }
+    numItems[name] += parseInt(value);
+    totalItems+=parseInt(value);
+    console.log(numItems);
+    console.log("total items:", totalItems)
+  }
+  </script>
    </body>
 
 </html>

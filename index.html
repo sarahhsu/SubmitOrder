@@ -2,20 +2,23 @@
 <html>
 
    <head>
-     <meta charset="UTF-8">
       <title>Pretty in Pink</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="index.css" />
       <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-      <script src="index.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
    </head>
 
    <body>
      <div class="navbar">
       <a href="#home">Home</a>
-      <a href="#cart">Shopping Cart</a>
+      <a href="#cart" class = "shop" data-toggle="modal" data-target="#checkout" onclick="DisplayCart()">Shopping Cart</a>
       <a href="#total" class = "cart">Total: $ <span id="sum"></sum></a>
     </div>
       <div class = "page">
@@ -28,9 +31,13 @@
           <p class="description">
             Kate Spade Grove Street Carli Leather Crossbody Satchel</p>
           <p>
+            <p class = "description">
+              <span id = "kspurse-quant">5</span>
+              <span> in stock</span>
+            </p>
             <div class = "incrementer">
-            <input type = "number" style = "width: 30px" id = "ks-purse" value = 0 min = 0>
-            <button onclick="addToCart('Kate Spade Purse', 186.54, document.getElementById('ks-purse').value)">Add To Cart</button>
+            <input type = "number" style = "width: 30px" id = "ks-purse" value = 0 min = 0 max = 5 >
+            <button onclick="addToCart('Kate Spade Purse', 186.54, document.getElementById('ks-purse').value, 'kspurse-quant',document.getElementById('ks-purse'))">Add To Cart</button>
           </div>
           </p>
       </div>
@@ -40,9 +47,13 @@
           <p class="description">
             OPI "Sweetheart" Nail Polish, 0.5 fl. oz.</p>
             <p>
+              <p class = "description">
+                <span id = "opi-quant">10</span>
+                <span> in stock</span>
+              </p>
               <div class = "incrementer">
-              <input type = "number" style = "width: 30px" id = "opi" value = 0 min = 0>
-              <button onclick="addToCart('OPI Nail Polish', 9.50, document.getElementById('opi').value)">Add To Cart</button>
+              <input type = "number" style = "width: 30px" id = "opi" value = 0 min = 0 max = 10 >
+              <button onclick="addToCart('OPI Nail Polish', 9.50, document.getElementById('opi').value, 'opi-quant', document.getElementById('opi'))">Add To Cart</button>
             </div>
             </p>
       </div>
@@ -52,9 +63,13 @@
           <p class="description">
             Alex and Ani Prints of Love Charm Bangle</p>
             <p>
+              <p class = "description">
+                <span id = "bangle-quant">3</span>
+                <span> in stock</span>
+              </p>
               <div class = "incrementer">
-              <input type = "number" style = "width: 30px" id = "bangle" value = 0 min = 0>
-              <button onclick="addToCart('Alex and Ani Bangle', 34.00, document.getElementById('bangle).value)">Add To Cart</button>
+              <input type = "number" style = "width: 30px" id = "bangle" value = 0 min = 0 max = 3>
+              <button onclick="addToCart('Alex and Ani Bangle', 34.00, document.getElementById('bangle').value, 'bangle-quant', document.getElementById('bangle'))">Add To Cart</button>
             </div>
             </p>
       </div>
@@ -64,9 +79,13 @@
          <p class="description">
            S'well Stainless Steel Bottle Sangria 9 oz.</p>
            <p>
+             <p class = "description">
+               <span id = "bottle-quant">4</span>
+               <span> in stock</span>
+             </p>
              <div class = "incrementer">
-             <input type = "number" style = "width: 30px" id = "swell" value = 0 min = 0>
-             <button onclick="addToCart('S'well Bottle', 25.00, document.getElementById('swell').value)">Add To Cart</button>
+             <input type = "number" style = "width: 30px" id = "swell" value = 0 min = 0 max = 4>
+             <button onclick="addToCart('S`well Bottle', 25.00, document.getElementById('swell').value, 'bottle-quant', document.getElementById('swell'))">Add To Cart</button>
            </div>
            </p>
      </div>
@@ -74,11 +93,16 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsBORRm1ntOxTs8J9lNY9vSM9_ehFgeO8JThULHu1sNnBjzVGs" class="merch" />
         <p class="price">$78.00</p>
         <p class="description">
-          Lululemon Garnet Namastay Mat</p>
+          Lululemon Garnet Namastay Mat
+        </p>
           <p>
+            <p class = "description">
+              <span id = "mat-quant">2</span>
+              <span> in stock</span>
+            </p>
             <div class = "incrementer">
-            <input type = "number" style = "width: 30px" id = "yoga" value = 0 min = 0>
-            <button onclick="addToCart('Lululemon Yoga Mat', 78.00, document.getElementById('yoga').value)">Add To Cart</button>
+            <input type = "number" style = "width: 30px" id = "yoga" value = 0 min = 0 max = 2>
+            <button onclick="addToCart('Lululemon Yoga Mat', 78.00, document.getElementById('yoga').value, 'mat-quant', document.getElementById('yoga'))">Add To Cart</button>
           </div>
           </p>
     </div>
@@ -88,9 +112,13 @@
        <p class="description">
          "But First, Coffee" Mug</p>
          <p>
+           <p class = "description">
+             <span id = "mug-quant">13</span>
+             <span> in stock</span>
+           </p>
            <div class = "incrementer">
-           <input type = "number" style = "width: 30px" id = "mug" value = 0 min = 0>
-           <button onclick="addToCart('Coffee Mug', 15.00, document.getElementById('mug').value)">Add To Cart</button>
+           <input type = "number" style = "width: 30px" id = "mug" value = 0 min = 0 max = 13>
+           <button onclick="addToCart('Coffee Mug', 15.00, document.getElementById('mug').value, 'mug-quant', document.getElementById('mug'))">Add To Cart</button>
          </div>
          </p>
    </div>
@@ -100,9 +128,13 @@
       <p class="description">
         Kate Spade 17 Month Planner</p>
         <p>
+          <p class = "description">
+            <span id = "planner-quant">8</span>
+            <span> in stock</span>
+          </p>
           <div class = "incrementer">
-          <input type = "number" style = "width: 30px" id = "planner" value = 0 min = 0>
-          <button onclick="addToCart('Kate Spade Planner', 30.00, document.getElementById('planner').value)">Add To Cart</button>
+          <input type = "number" style = "width: 30px" id = "planner" value = 0 min = 0 max = 8>
+          <button onclick="addToCart('Kate Spade Planner', 30.00, document.getElementById('planner').value, 'planner-quant', document.getElementById('planner'))">Add To Cart</button>
         </div>
         </p>
   </div>
@@ -112,9 +144,13 @@
      <p class="description">
        Urban Decay Naked 3 Palette</p>
        <p>
+         <p class = "description">
+           <span id = "palette-quant">6</span>
+           <span> in stock</span>
+         </p>
          <div class = "incrementer">
-         <input type = "number" style = "width: 30px" id = "palette" value = 0 min = 0>
-         <button onclick="addToCart('Urban Decay Naked Palette', 54.00, document.getElementById('palette').value)">Add To Cart</button>
+         <input type = "number" style = "width: 30px" id = "palette" value = 0 min = 0 max = 6>
+         <button onclick="addToCart('Urban Decay Naked Palette', 54.00, document.getElementById('palette').value, 'palette-quant', document.getElementById('palette'))">Add To Cart</button>
        </div>
        </p>
  </div>
@@ -122,34 +158,101 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6ylR5AHuzD2ucTDTEG5D9IS9woMBDOCWtttuHkARHJkBntOcf" class="merch" />
     <p class="price">$77.70</p>
     <p class="description">
-      Micahel Kors Sutton Leather Continental Wallet</p>
+      Michael Kors Sutton Leather Continental Wallet</p>
       <p>
+        <p class = "description">
+          <span id = "wallet-quant">3</span>
+          <span> in stock</span>
+        </p>
         <div class = "incrementer">
-        <input type = "number" style = "width: 30px" id = "wallet" value = 0 min = 0>
-        <button onclick="addToCart('Michael Kors Wallet', 77.70, document.getElementById('wallet').value)">Add To Cart</button>
+        <input type = "number" style = "width: 30px" id = "wallet" value = 0 min = 0 max = 3>
+        <button onclick="addToCart('Michael Kors Wallet', 77.70, document.getElementById('wallet').value, 'wallet-quant', document.getElementById('wallet'))">Add To Cart</button>
       </div>
       </p>
 </div>
    </main>
-      </div>
+   <p class = "design"> Page designed by Sarah Hsu </p>
+   <div id="checkout" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title">Modal Header</h4>
+         </div>
+         <div class="modal-body" id ="modal-body">
+          <table style="width:100%" id="items-table" class ="modal-table">
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+          </tr>
+        </table>
+        <p></p>
+        <p id="total-num"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" onclick="Checkout()">Checkout</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="Reset()">Close</button>
+        </div>
+     </div>
+  </div>
   <script>
   var numItems = {};
   var total = 0.0;
-  var totalItems = 0
-  document.getElementById("sum").innerHTML = total;
-  function addToCart(name, price, value) {
+  var totalItems = 0;
+  document.getElementById("sum").innerHTML = total.toFixed(2);
+  function addToCart(name, price, value, quantity, input) {
     total += parseFloat(price)*value;
     console.log("total price: ", total);
     document.getElementById("sum").innerHTML = total.toFixed(2);
     if (!(name in numItems)) {
       numItems[name] = 0
     }
+    var newQuant = parseInt(document.getElementById(quantity).innerHTML) - parseInt(value);
+    input.max = newQuant
+    if (newQuant == 0){
+      document.getElementById(quantity).innerHTML = "Not";
+    } else {
+      document.getElementById(quantity).innerHTML = newQuant.toString();
+    }
     numItems[name] += parseInt(value);
     totalItems+=parseInt(value);
-    console.log(numItems);
+    localStorage.setItem("numItems", numItems);
+    localStorage.setItem("totalItems", totalItems);
+    localStorage.setItem("total", total);
+    console.log("cart:", numItems);
     console.log("total items:", totalItems)
   }
+
+  function DisplayCart(){
+    console.log(numItems)
+    console.log(totalItems)
+    for (var key in numItems){
+      var table = document.getElementById("items-table");
+      var rowCount = table.rows.length;
+      var newRow = document.getElementById("items-table").insertRow(rowCount);
+      var item = newRow.insertCell(0);
+      var quant = newRow.insertCell(1);
+      item.innerHTML = key;
+      quant.innerHTML= numItems[key];
+    }
+    document.getElementById("total-num").innerHTML="Total Number of Items: "+totalItems.toString();
+  }
+
+  function Reset(){
+    var table = document.getElementById("items-table");
+    if (table.rows.length == 1) {
+      return
+    }
+    for(var i = table.rows.length - 1; i > 0; i--){
+      table.deleteRow(i);
+    }
+  }
+
+  function Checkout(){
+    total = total.toFixed(2);
+    price = total.toString();
+    document.getElementById("modal-body").innerHTML="Thanks for shopping! Your total is $" + price + ".";
+  };
   </script>
    </body>
-
 </html>

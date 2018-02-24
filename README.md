@@ -1,1 +1,1 @@
-This page lets the user browse and choose items to add to their shopping cart.
+This page is a fictional online shopping boutique called "Pretty in Pink", which lets users browse the items and add them to their cart. To see the current items in the cart, click "Shopping Cart". The running total is displayed in the far right corner.

@@ -185,6 +185,7 @@
         </table>
         <p></p>
         <p id="total-num"></p>
+        <p id="total-price"></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" onclick="Checkout()">Checkout</button>
@@ -224,7 +225,9 @@
       item.innerHTML = key;
       quant.innerHTML= numItems[key];
     }
-    document.getElementById("total-num").innerHTML="Total Number of Items: "+totalItems.toString();
+    price = total.toFixed(2);
+    document.getElementById("total-num").innerHTML="Number of Items: "+totalItems.toString();
+    document.getElementById("total-price").innerHTML="Total: $"+price.toString();
   }
 
   function Reset(){

@@ -175,11 +175,8 @@
    <div id="checkout" class="modal fade" role="dialog">
      <div class="modal-dialog">
        <div class="modal-content">
-         <div class="modal header">
-           <button type="button" class="close" data-dismiss="modal">&times;</button>
-           <h4 class="modal-title">Modal Header</h4>
-         </div>
          <div class="modal-body" id ="modal-body">
+           <h4>Shopping Cart</h4>
           <table style="width:100%" id="items-table" class ="modal-table">
           <tr>
             <th>Item</th>
@@ -202,7 +199,6 @@
   document.getElementById("sum").innerHTML = total.toFixed(2);
   function addToCart(name, price, value, quantity, input) {
     total += parseFloat(price)*value;
-    console.log("total price: ", total);
     document.getElementById("sum").innerHTML = total.toFixed(2);
     if (!(name in numItems)) {
       numItems[name] = 0
@@ -216,16 +212,9 @@
     }
     numItems[name] += parseInt(value);
     totalItems+=parseInt(value);
-    localStorage.setItem("numItems", numItems);
-    localStorage.setItem("totalItems", totalItems);
-    localStorage.setItem("total", total);
-    console.log("cart:", numItems);
-    console.log("total items:", totalItems)
   }
 
   function DisplayCart(){
-    console.log(numItems)
-    console.log(totalItems)
     for (var key in numItems){
       var table = document.getElementById("items-table");
       var rowCount = table.rows.length;

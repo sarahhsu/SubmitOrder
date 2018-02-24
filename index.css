@@ -118,7 +118,7 @@ img {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  font-size: 21px;
+  font-size: 15px;
   font-family: 'Lato', sans-serif;
   background-color: #ffd3d9;
   color: white;
@@ -130,9 +130,10 @@ table, th, tr, td{
   border: 2px solid white;
 }
 
+
 .btn {
   color: #aaa;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
 }
 
